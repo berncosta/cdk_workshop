@@ -3,7 +3,7 @@
 venv_start:
 	source .venv/bin/activate
 
-deploy_prod:
+first_deploy_prod:
 	cdk synth
 	cdk bootstrap
 	cdk deploy
