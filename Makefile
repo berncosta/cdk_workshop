@@ -7,3 +7,6 @@ first_deploy_prod:
 	cdk synth
 	cdk bootstrap
 	cdk deploy
+
+install_deps:
+	pip install -r requirements.txt
