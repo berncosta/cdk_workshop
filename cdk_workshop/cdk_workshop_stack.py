@@ -6,6 +6,7 @@ from aws_cdk import (
 )
 
 from .hitcounter import HitCounter
+from cdk_dynamo_table_view import TableViewer
 
 
 class CdkWorkshopStack(Stack):
@@ -34,5 +35,13 @@ class CdkWorkshopStack(Stack):
             self,
             id='Endpoint',
             handler=hello_with_hitcounter.handler,
+        )
+
+        TableViewer(
+            self,
+            id='ViewHitCounter',
+            title='Hello Hits',
+            table=hello_with_hitcounter.table,
+            sort_by='-hits', # the - sign indicates descending order
         )
 
